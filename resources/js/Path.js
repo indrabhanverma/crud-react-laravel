@@ -1,19 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProjectList from "./admin/pages/ProjectList";
-import ProjectCreate from "./admin/pages/ProjectCreate";
-import ProjectEdit from "./admin/pages/ProjectEdit";
-import ProjectShow from "./admin/pages/ProjectShow";
 
-import ProductCreate from "./admin/product/create";
-import ProductEdit from "./admin/product/edit";
-import Productlist from "./admin/product/list";  
 
-function Main() {
+//Admin Components
+import ProjectList from "./components/admin/pages/ProjectList";
+import ProjectCreate from "./components/admin/pages/ProjectCreate";
+import ProjectEdit from "./components/admin/pages/ProjectEdit";
+import ProjectShow from "./components/admin/pages/ProjectShow";
+import ProductCreate from "./components/admin/product/create";
+import ProductEdit from "./components/admin/product/edit";
+import Productlist from "./components/admin/product/list";  
+
+function Path() {
     return (
         <Router>
             <Routes>
+
+
+        Front Routes
+
+
+
+           // Admin Routes
                 <Route exact path="/"  element={<ProjectList/>} />
                 <Route path="/create"  element={<ProjectCreate/>} />
                 <Route path="/edit/:id"  element={<ProjectEdit/>} />
@@ -26,8 +35,8 @@ function Main() {
     );
 }
    
-export default Main;
+export default Path;
 
 if (document.getElementById('app')) {
-    ReactDOM.render(<Main />, document.getElementById('app'));
+    ReactDOM.render(<Path />, document.getElementById('app'));
 }
