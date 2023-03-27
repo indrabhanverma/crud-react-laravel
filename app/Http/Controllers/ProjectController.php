@@ -15,7 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::get(); 
-        dd($projects);
+        
         return response()->json($projects);
        
 
