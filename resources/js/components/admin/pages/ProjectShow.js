@@ -6,7 +6,7 @@ function ProjectShow() {
     const [id, setId] = useState(useParams().id)
     const [project, setProject] = useState({name:'', description:''})
     useEffect(() => {
-        axios.get(`/api/projects/${id}`)
+        axios.get(`/api/admin/projects/${id}`)
         .then(function (response) {
           setProject(response.data)
         })

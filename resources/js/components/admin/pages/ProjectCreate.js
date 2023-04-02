@@ -12,7 +12,7 @@ function ProjecCreate() {
     const handleSave = () => { 
       
         setIsSaving(true);
-        axios.post('/api/projects', {
+        axios.post('/api/admin/projects', {
             name: name,
             description: description
           })
@@ -47,7 +47,7 @@ function ProjecCreate() {
                     <div className="card-header">
                         <Link 
                             className="btn btn-outline-info float-right"
-                            to="/project">View All Projects
+                            to="/">View All Projects
                         </Link>
                     </div>
                     <div className="card-body">

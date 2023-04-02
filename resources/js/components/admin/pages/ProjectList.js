@@ -11,7 +11,7 @@ function ProjectList() {
     }, [])
  
     const fetchProjectList = () => {
-        axios.get('/api/projects')
+        axios.get('/api/admin/projects')
         .then(function (response) {
           setProjectList(response.data);
         })
@@ -31,7 +31,7 @@ function ProjectList() {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if(result.isConfirmed) {
-                axios.delete(`/api/projects/${id}`)
+                axios.delete(`/api/admin/projects/${id}`)
                 .then(function (response) {
                     Swal.fire({
                         icon: 'success',

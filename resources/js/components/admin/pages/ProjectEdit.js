@@ -11,7 +11,7 @@ function ProjectEdit() {
  
      
     useEffect(() => {
-        axios.get(`/api/projects/${id}`)
+        axios.get(`/api/admin/projects/${id}`)
         .then(function (response) {
             let project = response.data
             setName(project.name);
@@ -31,7 +31,7 @@ function ProjectEdit() {
  
     const handleSave = () => {
         setIsSaving(true);
-        axios.patch(`/api/projects/${id}`, {
+        axios.patch(`/api/admin/projects/${id}`, {
             name: name,
             description: description
         })

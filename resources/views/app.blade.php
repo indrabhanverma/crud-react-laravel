@@ -39,6 +39,5 @@
     <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('assets/js/misc.js') }}"></script>
    
-    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
     <!-- <script src="{{ asset('js/main.js') }}"></script> -->
 </html>

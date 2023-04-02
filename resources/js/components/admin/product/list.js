@@ -11,7 +11,7 @@ function productList() {
     }, [])
  
     const fetchProductList = () => {
-        axios.get('/api/products')
+        axios.get('http://127.0.0.1:8000/api/admin/products')
         .then(function (response) {
           setProductList(response.data);
         })

@@ -11,7 +11,7 @@ function ProductEdit() {
  
      
     useEffect(() => {
-        axios.get(`/api/products/${id}`)
+        axios.get(`/api/admin/products/${id}`)
         .then(function (response) {
             let product = response.data;
           
@@ -32,7 +32,7 @@ function ProductEdit() {
  
     const handleSave = () => {
         setIsSaving(true);
-        axios.patch(`/api/products/${id}`, {
+        axios.patch(`/api/admin/products/${id}`, {
             title: title,
             description: description
         })

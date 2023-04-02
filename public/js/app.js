@@ -9834,7 +9834,7 @@ function ProjecCreate() {
     setIsSaving = _useState6[1];
   var handleSave = function handleSave() {
     setIsSaving(true);
-    axios.post('/api/projects', {
+    axios.post('/api/admin/projects', {
       name: name,
       description: description
     }).then(function (response) {
@@ -9870,7 +9870,7 @@ function ProjecCreate() {
           className: "card-header",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
             className: "btn btn-outline-info float-right",
-            to: "/project",
+            to: "/",
             children: "View All Projects"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -9971,7 +9971,7 @@ function ProjectEdit() {
     isSaving = _useState8[0],
     setIsSaving = _useState8[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get("/api/projects/".concat(id)).then(function (response) {
+    axios.get("/api/admin/projects/".concat(id)).then(function (response) {
       var project = response.data;
       setName(project.name);
       setDescription(project.description);
@@ -9986,7 +9986,7 @@ function ProjectEdit() {
   }, []);
   var handleSave = function handleSave() {
     setIsSaving(true);
-    axios.patch("/api/projects/".concat(id), {
+    axios.patch("/api/admin/projects/".concat(id), {
       name: name,
       description: description
     }).then(function (response) {
@@ -10110,7 +10110,7 @@ function ProjectList() {
     fetchProjectList();
   }, []);
   var fetchProjectList = function fetchProjectList() {
-    axios.get('/api/projects').then(function (response) {
+    axios.get('/api/admin/projects').then(function (response) {
       setProjectList(response.data);
     })["catch"](function (error) {
       console.log(error);
@@ -10127,7 +10127,7 @@ function ProjectList() {
       confirmButtonText: 'Yes, delete it!'
     }).then(function (result) {
       if (result.isConfirmed) {
-        axios["delete"]("/api/projects/".concat(id)).then(function (response) {
+        axios["delete"]("/api/admin/projects/".concat(id)).then(function (response) {
           sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
             icon: 'success',
             title: 'Project deleted successfully!',
@@ -10267,7 +10267,7 @@ function ProjectShow() {
     project = _useState4[0],
     setProject = _useState4[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get("/api/projects/".concat(id)).then(function (response) {
+    axios.get("/api/admin/projects/".concat(id)).then(function (response) {
       setProject(response.data);
     })["catch"](function (error) {
       console.log(error);
@@ -10386,7 +10386,7 @@ function CreateProduct() {
             formData.append('description', description);
             formData.append('image', image);
             _context.next = 7;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://localhost:8000/api/products", formData).then(function (_ref2) {
+            return axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://localhost:8000/api/admin/products", formData).then(function (_ref2) {
               var data = _ref2.data;
               sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                 icon: "success",
@@ -10562,7 +10562,7 @@ function ProductEdit() {
     isSaving = _useState8[0],
     setIsSaving = _useState8[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get("/api/products/".concat(id)).then(function (response) {
+    axios.get("/api/admin/products/".concat(id)).then(function (response) {
       var product = response.data;
       settitle(product.title);
       setDescription(product.description);
@@ -10577,7 +10577,7 @@ function ProductEdit() {
   }, []);
   var handleSave = function handleSave() {
     setIsSaving(true);
-    axios.patch("/api/products/".concat(id), {
+    axios.patch("/api/admin/products/".concat(id), {
       title: title,
       description: description
     }).then(function (response) {
@@ -10701,7 +10701,7 @@ function productList() {
     fetchProductList();
   }, []);
   var fetchProductList = function fetchProductList() {
-    axios.get('/api/products').then(function (response) {
+    axios.get('http://127.0.0.1:8000/api/admin/products').then(function (response) {
       setProductList(response.data);
     })["catch"](function (error) {
       console.log(error);
